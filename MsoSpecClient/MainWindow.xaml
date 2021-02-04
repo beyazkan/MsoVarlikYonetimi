@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <DockPanel>
+            <StackPanel Background="DarkGray" DockPanel.Dock="Right" Width="320" Margin="0,0,-325,0">
+                <Button Content="Button"/>
+            </StackPanel>
+            <WrapPanel DockPanel.Dock="Left">
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+                <local:ComputerUC Height="100" Width="93"/>
+            </WrapPanel>
+            
+        </DockPanel>
     </Grid>
 </Window>

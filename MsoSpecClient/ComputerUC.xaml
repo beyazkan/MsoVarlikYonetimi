@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MsoSpecClient.ComputerUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MsoSpecClient"
+             MouseLeftButtonDown="UserControl_MouseLeftButtonDown"
+             mc:Ignorable="d" BorderBrush="#FFB80000" Height="100">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="76" VerticalAlignment="Top" Width="83" Source="computer.png" Margin="5,5,5,0"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="AU01" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="DarkGray"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+    </Grid>
+</UserControl>
