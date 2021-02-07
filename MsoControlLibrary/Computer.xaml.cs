@@ -13,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MsoSpecClient
+namespace MsoControlLibrary
 {
     /// <summary>
-    /// Interaction logic for ComputerUC.xaml
+    /// Interaction logic for Computer.xaml
     /// </summary>
-    public partial class ComputerUC : UserControl
+    public partial class Computer : UserControl
     {
-        public ComputerUC()
+        public Computer()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            
-            MessageBox.Show("Test");
         }
     }
 }

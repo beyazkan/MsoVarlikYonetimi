@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsoSpecClient", "MsoSpecCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsoSocket", "MsoSocket\MsoSocket.csproj", "{47B31B59-73F5-49FF-B8C9-7D2A69D7FFCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsoControlLibrary", "MsoControlLibrary\MsoControlLibrary.csproj", "{8953C4A0-6B6B-4BCC-B44A-8747BE876073}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{47B31B59-73F5-49FF-B8C9-7D2A69D7FFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B31B59-73F5-49FF-B8C9-7D2A69D7FFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B31B59-73F5-49FF-B8C9-7D2A69D7FFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8953C4A0-6B6B-4BCC-B44A-8747BE876073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8953C4A0-6B6B-4BCC-B44A-8747BE876073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8953C4A0-6B6B-4BCC-B44A-8747BE876073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8953C4A0-6B6B-4BCC-B44A-8747BE876073}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

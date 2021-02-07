@@ -1,29 +1,24 @@
-﻿<Window x:Class="MsoSpecClient.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MsoSpecClient"
+        xmlns:MsoControlLibrary="clr-namespace:MsoControlLibrary;assembly=MsoControlLibrary" x:Class="MsoSpecClient.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#FF767676">
     <Grid>
         <DockPanel>
-            <StackPanel Background="DarkGray" DockPanel.Dock="Right" Width="320" Margin="0,0,-325,0">
+            <StackPanel Background="DarkGray" DockPanel.Dock="Right" Width="320">
                 <Button Content="Button"/>
             </StackPanel>
             <WrapPanel DockPanel.Dock="Left">
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
-                <local:ComputerUC Height="100" Width="93"/>
+                <MsoControlLibrary:Computer Width="100"/>
+                <MsoControlLibrary:Computer Width="100"/>
+                <MsoControlLibrary:Computer Width="100"/>
+                <MsoControlLibrary:Computer Width="100"/>
+                <MsoControlLibrary:Computer Width="100"/>
             </WrapPanel>
-            
         </DockPanel>
     </Grid>
 </Window>

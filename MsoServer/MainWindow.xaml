@@ -1,12 +1,51 @@
-﻿<Window x:Class="MsoServer.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MsoServer"
+        xmlns:MsoControlLibrary="clr-namespace:MsoControlLibrary;assembly=MsoControlLibrary" x:Class="MsoServer.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MsoServer" Height="450" Width="800" Background="#FF939393" >
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" Grid.Column="0" Margin="5">
+        <WrapPanel>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+            <MsoControlLibrary:Computer Width="100"/>
+        </WrapPanel>
+        </ScrollViewer>
+        <DockPanel Grid.Column="0" Grid.Row="0" Margin="2">
+            <Button Content="Ara" DockPanel.Dock="Right" Width="75" Margin="5, 0,0,0"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Grid.Column="0" Grid.Row="2" Margin="5"/>
+        <Button Content="Başlat" Grid.Column="1" Grid.Row="2" Margin="5"/>
+
     </Grid>
 </Window>
