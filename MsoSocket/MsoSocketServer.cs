@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -15,6 +17,8 @@ namespace MsoSocket
         int mPort;
         TcpListener mListener;
         List<TcpClient> mClients;
+        public bool isRunning { get; set; }
+        Logger logger = LogManager.GetCurrentClassLogger();
 
         public MsoSocketServer(IPAddress iPAddress = null, int port = 2684)
         {
@@ -29,8 +33,34 @@ namespace MsoSocket
             {
                 mPort = 2684;
             }
+        }
 
+        public async void Start()
+        {
+            try
+            {
+                // TcpListener Nesnesi
+                mListener = new TcpListener(mIp, mPort);
+                isRunning = true;
 
+                // Dinleme Metodu
+                AcceptClients();
+            }
+            catch (Exception e)
+            {
+                logger.Debug(e.Message);
+            }
+        }
+
+        private async void AcceptClients()
+        {
+            while (isRunning)
+            {
+                var client = await mListener.AcceptTcpClientAsync();
+                mClients.Add(client);
+
+                logger.Log(LogLevel.Info, string.Format("İstemci başarılı bir şekilde bağlandı. Sayısı {0} - Ip Adresi : {1}", mClients.Count, client.Client.RemoteEndPoint));
+            }
         }
     }
 }
