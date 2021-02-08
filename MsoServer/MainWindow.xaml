@@ -44,8 +44,8 @@
             <Button Content="Ara" DockPanel.Dock="Right" Width="75" Margin="5, 0,0,0"/>
             <TextBox TextWrapping="Wrap" Text="TextBox" DockPanel.Dock="Left"/>
         </DockPanel>
-        <TextBox TextWrapping="Wrap" Text="TextBox" Grid.Column="0" Grid.Row="2" Margin="5"/>
-        <Button Content="Başlat" Grid.Column="1" Grid.Row="2" Margin="5"/>
+        <TextBox TextWrapping="Wrap" Grid.Column="0" Grid.Row="2" Margin="5" Name="TxtConsole"/>
+        <Button Content="Başlat" Grid.Column="1" Grid.Row="2" Margin="5" Click="Button_Click" Name="btnStart"/>
 
     </Grid>
 </Window>

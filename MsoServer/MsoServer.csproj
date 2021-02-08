@@ -114,6 +114,10 @@
       <Project>{8953c4a0-6b6b-4bcc-b44a-8747be876073}</Project>
       <Name>MsoControlLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MsoSocket\MsoSocket.csproj">
+      <Project>{3597efa0-e6fd-424f-8fab-260bf7a5dfa5}</Project>
+      <Name>MsoSocket</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
