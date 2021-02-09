@@ -109,5 +109,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MsoSocket\MsoSocket.csproj">
+      <Project>{3597EFA0-E6FD-424F-8FAB-260BF7A5DFA5}</Project>
+      <Name>MsoSocket</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

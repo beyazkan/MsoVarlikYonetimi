@@ -1,4 +1,5 @@
 ﻿using MsoSocket;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,11 +24,13 @@ namespace MsoServer
     public partial class MainWindow : Window
     {
         MsoSocketServer socketServer;
+        Logger logger = LogManager.GetCurrentClassLogger(); 
 
         public MainWindow()
         {
             InitializeComponent();
             socketServer = new MsoSocketServer();
+            logger.Info("MsoServer Çalışmaya Başladı.");
             socketServer.RaiseClientConnectedEvent += HandleClientConnected;
         }
 
@@ -37,12 +40,14 @@ namespace MsoServer
             {
                 socketServer.isRunning = false;
                 btnStart.Content = "Başlat";
+                logger.Info("Sunucu durduruldu.");
                 TxtConsole.AppendText(string.Format("Sunucu Durduruldu. {0}", Environment.NewLine));
             }
             else
             {
                 socketServer.Start();
                 btnStart.Content = "Durdur";
+                logger.Info("Sunucu başlatıldı.");
                 TxtConsole.AppendText(string.Format("Sunucu Başlatıldı.{0}", Environment.NewLine));
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MsoSocket;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace MsoSpecClient
     /// </summary>
     public partial class MainWindow : Window
     {
+        MsoSocketSpecClient socketClient;
+
         public MainWindow()
         {
             InitializeComponent();
+            socketClient = new MsoSocketSpecClient();
+            _ =  socketClient.ConnectToServer();
         }
     }
 }

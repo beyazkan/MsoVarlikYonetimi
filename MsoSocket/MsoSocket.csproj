@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomEventArgs.cs" />
+    <Compile Include="Library\Client.cs" />
+    <Compile Include="Library\Computer.cs" />
+    <Compile Include="Library\Headers.cs" />
+    <Compile Include="MsoSocketSpecClient.cs" />
+    <Compile Include="MsoSocketClient.cs" />
     <Compile Include="MsoSocketServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,5 +67,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
