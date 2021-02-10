@@ -10,7 +10,7 @@
     <Grid>
         <DockPanel>
             <StackPanel Background="DarkGray" DockPanel.Dock="Right" Width="320">
-                <Button Content="Button"/>
+                <Button Content="Bağlan" Name="btnBaslat" Click="btnBaslat_Click"/>
             </StackPanel>
             <WrapPanel DockPanel.Dock="Left">
                 <MsoControlLibrary:Computer Width="100"/>

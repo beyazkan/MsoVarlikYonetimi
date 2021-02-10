@@ -19,7 +19,7 @@ namespace MsoSocket.Library
         Video
     }
 
-    enum ClientHeaders
+    enum Headers
     {
         Connect,
         Disconnect,

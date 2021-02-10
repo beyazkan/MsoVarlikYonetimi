@@ -16,6 +16,7 @@ namespace MsoSocket
         int mPort;
         TcpClient mClient;
         Logger logger = LogManager.GetCurrentClassLogger();
+        public bool isRunning { get; set; }
 
         public MsoSocketClient(IPAddress ipAddr = null, int port = 2684)
         {
@@ -32,22 +33,24 @@ namespace MsoSocket
 
             try
             {
+                isRunning = true;
                 await mClient.ConnectAsync(mIp, mPort);
                 logger.Info(string.Format("{0}:{1} ip adresli sunucuya bağlanıldı.", mIp, mPort));
 
                 await Listening(mClient);
-            }
-            catch (SocketException e)
-            {
-                _= ConnectToServer();
-                logger.Info("Sunucuya bağlanamadı. 1 dk içinde tekrar denenecek.");
-                Thread.Sleep(60000);
             }
             catch (Exception e)
             {
                 logger.Error(e.ToString());
                 logger.Error(e.Message);
             }
+        }
+
+        public void Disconnect()
+        {
+            mClient.Close();
+            isRunning = false;
+            logger.Info("Bağlantı Kesildi.");
         }
 
         private async Task Listening(TcpClient tcpClient)

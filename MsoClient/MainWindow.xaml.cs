@@ -27,7 +27,23 @@ namespace MsoClient
         {
             InitializeComponent();
             socketClient = new MsoSocketClient();
-            socketClient.ConnectToServer();
+            
+        }
+
+        private void btnBaslat_Click(object sender, RoutedEventArgs e)
+        {
+            if (!socketClient.isRunning)
+            {
+                btnBaslat.Content = "Bağlantıyı Kes";
+                _ = socketClient.ConnectToServer();
+            }
+            else
+            {
+                socketClient.isRunning = false;
+                socketClient.Disconnect();
+                btnBaslat.Content = "Bağlan";
+            }
+            
         }
     }
 }

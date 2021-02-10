@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Bağlan" HorizontalAlignment="Left" Margin="263,76,0,0" VerticalAlignment="Top" Width="248" Name="btnBaslat" Click="btnBaslat_Click"/>
+
     </Grid>
 </Window>

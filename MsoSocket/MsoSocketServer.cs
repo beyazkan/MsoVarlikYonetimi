@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -84,7 +85,8 @@ namespace MsoSocket
                 ClientConnectedEventArgs eaClientConnected;
                 eaClientConnected = new ClientConnectedEventArgs(client.Client.RemoteEndPoint.ToString());
                 OnRaiseClientConnectedEvent(eaClientConnected);
-
+                Send(client, PackageType.Header);
+                Send(client, Headers.Authorization);
                 Listening(client);
             }
         }
@@ -99,12 +101,40 @@ namespace MsoSocket
                     networkStream = client.GetStream();
 
                     byte[] buff = new byte[1024];
-                    int nRet = await networkStream.ReadAsync(buff, 0, buff.Length);
+                    //int nRet = await networkStream.ReadAsync(buff, 0, buff.Length);
 
-                    if(nRet == 0)
+                    switch ((PackageType)networkStream.ReadByte())
+                    {
+                        case PackageType.Header:
+                            break;
+                        case PackageType.Text:
+                            break;
+                        case PackageType.Object:
+                            logger.Info("Nesne Bilgisi Geldi.");
+                            BinaryFormatter binaryFormatter = new BinaryFormatter();
+                            Computer computer = (Computer)binaryFormatter.Deserialize(networkStream);
+                            logger.Info(string.Format("Bilgisayar Adi: {0}", computer.name));
+                            break;
+                        case PackageType.Command:
+                            break;
+                        case PackageType.Notification:
+                            break;
+                        case PackageType.File:
+                            break;
+                        case PackageType.Image:
+                            break;
+                        case PackageType.Sound:
+                            break;
+                        case PackageType.Video:
+                            break;
+                        default:
+                            break;
+                    }
+
+                    /*if(nRet == 0)
                     {
                         //Disconnect işlemi
-                    }
+                    }*/
                 }
             }
             catch (Exception e)
@@ -129,7 +159,24 @@ namespace MsoSocket
             {
                 logger.Error(e.Message);
             }
-        } 
+        }
+
+        private void Send(TcpClient client, Headers headers)
+        {
+            NetworkStream networkStream = client.GetStream();
+            byte[] buff = new byte[1024];
+
+            try
+            {
+                networkStream.WriteByte((byte)headers);
+                networkStream.Flush();
+                Array.Clear(buff, 0, buff.Length);
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.Message);
+            }
+        }
 
 
     }
